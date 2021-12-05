@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "946969627051",
+    "project_id": "tensile-pier-331807",
+    "storage_bucket": "tensile-pier-331807.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946969627051:android:f8dce64b7e68cae86e2aee",
+        "android_client_info": {
+          "package_name": "com.ocrappandroidreactnative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946969627051-gc88grjpdf49tteurqh4jktc85prk9gi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAthly9IEXVC4NAKKMxU0TfRSNPavBuH8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946969627051-gc88grjpdf49tteurqh4jktc85prk9gi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
