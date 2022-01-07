@@ -132,7 +132,9 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        missingDimensionStrategy 'react-native-camera', 'mlkit' // <--- replace general with mlkit
+        missingDimensionStrategy 'react-native-camera', 'general'
+        multiDexEnabled true
+        // missingDimensionStrategy 'react-native-camera', 'mlkit' // <--- replace general with mlkit
         applicationId "com.ocrappandroidreactnative"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
