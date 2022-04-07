@@ -19,9 +19,11 @@
     "react-native-camera-hooks": "^0.5.3",
     "react-native-fs": "^2.18.0",
     "react-native-gesture-handler": "^2.1.0",
+    "react-native-image-picker": "^4.7.3",
     "react-native-location-ocr": "^0.2.2",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.10.1",
+    "react-native-text-recognition": "^1.0.0",
     "react-redux": "^7.2.5",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0"

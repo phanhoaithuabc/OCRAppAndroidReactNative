@@ -1,27 +1,46 @@
-import * as React from 'react';
-import { StyleSheet, View, Text, Image, TextInput, FlatList, TouchableOpacity,
+import React, {useState, useEffect} from 'react';
+import { StyleSheet, View, Text, Image, ScrollView, TextInput, FlatList, TouchableOpacity
 } from 'react-native';
 import CustomButton from '../utils/CustomButton';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import TextRecognition from 'react-native-text-recognition';
 
 export default function Home({ navigation }) {
-
+    const [image, setImage] = useState(null);
+    const [text, setText] = useState(null);
+    // useEffect(()=>{
+    //     launchImageLibrary({}, setImage);
+    // }, []);
+    useEffect(()=>{
+        (async () => {
+            if (image){
+                const result = await TextRecognition.recognize(image.assets[0].uri);
+                let result2='';
+                for(let item in result){
+                    result2 += result[item] + '\n' 
+                }
+                setText(result2)
+                console.log("result: ", result2)
+            }
+        })();
+    }, [image]);
+    
     return (
         <View style={styles.body}>
             <Image style={styles.logo} source={require('../../assets/ocrocr.png')}/>
             <Text style={styles.text}>Welcome to OCR</Text>
             <Text style={styles.text}>Application</Text>
             <Text style={styles.subtitle}>designed by ThuPH5</Text>
-            <View style={styles.result}>
-                <Text style={styles.subtitle}>result shown here</Text>
-            </View>
-            <CustomButton title="Open Camera" color='#1eb900'
-                onPressFunction={() => { navigation.navigate('Camera') }} />
+            <ScrollView contentContainerStyle={styles.result}>
+                <Text style={styles.subtitle}>{text ? text : "Not contain text"}</Text>
+            </ScrollView>
+            {/* <CustomButton title="Select Image" color='#1eb900'
+                onPressFunction={() => { navigation.navigate('Camera') }} /> */}
+            <CustomButton title="Select Image" color='#1eb900'
+                onPressFunction={() => { launchImageLibrary({}, setImage); }} />
         </View>
     )
 }
-
-
-//------------------------------------------------------------------------------------ //
 
 const styles = StyleSheet.create({
     body: {
